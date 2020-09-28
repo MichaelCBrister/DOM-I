@@ -40,3 +40,50 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+/* MVP */
+const navItems = document.querySelectorAll('a');
+
+navItems[0].textContent = siteContent['nav']['nav-item-1'];
+navItems[1].textContent = siteContent['nav']['nav-item-2'];
+navItems[2].textContent = siteContent['nav']['nav-item-3'];
+navItems[3].textContent = siteContent['nav']['nav-item-4'];
+navItems[4].textContent = siteContent['nav']['nav-item-5'];
+navItems[5].textContent = siteContent['nav']['nav-item-6'];
+navItems[0].style.color = 'green';
+navItems[1].style.color = 'green';
+navItems[2].style.color = 'green';
+navItems[3].style.color = 'green';
+navItems[4].style.color = 'green';
+navItems[5].style.color = 'green';
+
+const navBar = document.querySelector('nav');
+const prependItem = document.createElement('a');
+const appendItem = document.createElement('a');
+
+prependItem.href = '#';
+prependItem.textContent = 'Prepend';
+prependItem.style.color = 'green';
+
+appendItem.href = '#';
+appendItem.textContent = 'Append Child';
+appendItem.style.color = 'green';
+
+navBar.prepend(prependItem);
+navBar.append(appendItem);
+
+// cta
+const ctaText = document.querySelector('.cta-text h1');
+/* 
+Tried the below method but could not figure out how to get the line breaks in the correct spot
+ctaText.textContent = siteContent['cta']['h1'];
+*/
+ctaText.innerHTML = 'DOM<br/>IS<br/>AWESOME';
+
+const button = document.querySelector('button');
+button.innerHTML = siteContent['cta']['button'];
+
+const headerImg = document.querySelector('#cta-img');
+headerImg.src = siteContent['cta']['img-src'];
+headerImg.alt = 'Main header ciricle image';
